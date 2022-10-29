@@ -26,6 +26,7 @@ func ingest(file io.Reader) (header []string, data [][]string, indices []map[str
 
 	indices = make([]map[string][]int, len(header))
 	var rowCount , colCount int = 0, len(header)
+	fmt.Println("len(header)", len(header))
 	fmt.Println("rowCount", rowCount)
 	fmt.Println("colCount", colCount)
 
@@ -44,6 +45,7 @@ func ingest(file io.Reader) (header []string, data [][]string, indices []map[str
 	}
 	return
 }
+
 // cardinality counts the number of unique values in a column.
 // This assumes that the index i of indices represents a column.
 func cardinality(indices []map[string][]int) []int {
